@@ -1,21 +1,12 @@
 <div class="form-group">
-  <label>Input Form</label>
-  <input
-    type="text"
-    class="form-control"
-    (input)="onUpdateServerName($event)"
-  />
-  <input type="text" class="form-control" [(ngModel)]="serverName" />
-  <p>{{ serverName }}</p>
+  <label>Input Your Username ....</label>
+  <input type="text" class="form-control" [(ngModel)]="username" />
 </div>
+<p>{{ username }}</p>
 <button
   class="btn btn-primary"
-  [disabled]="!allowNewServer"
-  (click)="onCreateServer()"
+  [disabled]="username === ''"
+  (click)="username = ''"
 >
-  Add Server
+  Reset Username
 </button>
-<p [innerText]="allowNewServer"></p>
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
